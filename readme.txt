@@ -13,6 +13,6 @@ More functionalities will be added as i proceed with the project
 -------------------
 
 ----------------
-Email Support : abejasarah@gmail.com
+Email Support : abejasara@gmail.com
 
 Your feedback  will help me upgrade the system till i meet my objectives.
