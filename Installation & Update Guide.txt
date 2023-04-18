@@ -1,0 +1,15 @@
+
+
+Note:- 
+IF YOU WANT TO UPDATE THE PREVIOUS VERSION THEN USE THE BELOW STEPS
+Step 1:- Please a backup of your old files first.
+Step 2:- Upload the "PropertyBrokerage System" file in admin/uploads folder. (find the file in the update folder)
+Step 3:- Go to Admin > Update page.
+Step 4:- After uploading completed you can see install button.
+Step 5:- Click on install button and wait for complete
+Step 6:- Done.
+
+
+
+Thank you again,
+Sarah
