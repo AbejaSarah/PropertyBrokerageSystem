@@ -158,7 +158,7 @@ def recommendations():
     properties['has_elevator'] = properties['has_elevator'].astype(str)
     properties['room_qty'] = properties['room_qty'].astype(str)
 
-    # Filter the dataset based on user input
+    # Filter dataset based on user input
     filtered_properties = properties[
         properties['has_elevator'].str.contains(keywords, case=False, na=False) &
         properties['room_qty'].str.contains(location, case=False, na=False)
