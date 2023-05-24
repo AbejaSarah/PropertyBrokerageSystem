@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash ,jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import FlaskForm
@@ -158,7 +158,7 @@ def recommendations():
     properties['has_elevator'] = properties['has_elevator'].astype(str)
     properties['room_qty'] = properties['room_qty'].astype(str)
 
-    # Filter dataset based on user input
+    # Filter the dataset based on user input
     filtered_properties = properties[
         properties['has_elevator'].str.contains(keywords, case=False, na=False) &
         properties['room_qty'].str.contains(location, case=False, na=False)
@@ -174,8 +174,6 @@ def recommendations():
         return render_template('no_recommendation.html', error_message=error_message)
 
     # Pagination
-
-
     items_per_page = random.randint(10, 900000000)  # Number of recommendations per page
     total_pages = ceil(len(recommendations) / items_per_page)
     page = int(request.args.get('page', 1))
