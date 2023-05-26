@@ -95,8 +95,8 @@ class LoginForm(FlaskForm):
 properties = pd.read_csv('data/property.csv')
 user_activity = pd.read_csv('data/user_activity.csv')
 
-# Calculate property popularity
-property_frequency = user_activity['item_id'].value_counts().to_dict()
+# Calculate property popularity based on the event type
+property_frequency = user_activity['event_type'].value_counts().to_dict()
 
 @app.route('/')
 def index():
