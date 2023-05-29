@@ -16,16 +16,15 @@
                     <form autocomplete="off" method="GET" action="{{ url_for('recommendations') }}">
                         <div class="intro-banner-search-form margin-top-45">
                             <div class="intro-search-field">
-                                <select id="intro-keywords" class="qucikad-ajaxsearch-input" name="keywords" data-prev-value="0" data-noresult="More results for">
+                                <select class="form-select" name="keywords">
                                     <option value="TRUE">Has an Elevator</option>
                                     <option value="FALSE">No Elevator</option>
                                 </select>
                                 <i class="qucikad-ajaxsearch-close fa fa-times-circle" aria-hidden="true" style="display: none;"></i>
-                              
                             </div>
                             <div class="intro-search-field with-autocomplete live-location-search">
-                                <div class="input-with-icon">
-                                   <select id="intro-keywords" class="qucikad-ajaxsearch-input" name="location" data-prev-value="0" data-noresult="More results for">
+                                <div class="input-group">
+                                    <select class="form-select" name="location">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -33,7 +32,7 @@
                                 </div>
                             </div>
                             <div class="intro-search-button">
-                                <button class="button ripple-effect" type="submit">Search</button>
+                                <button class="btn btn-primary" type="submit">Search</button>
                             </div>
                         </div>
                     </form>
@@ -42,7 +41,7 @@
         </div>
     </div>
 
-<!--<!-- Category Boxes -->
+<!-- Category Boxes -->
   <div class="section margin-top-65 d-none">
       <div class="container">
           <div class="row">
@@ -51,81 +50,158 @@
                       <h3>All Categories</h3>
                   </div>
                   <div class="categories-container">
-                      
-                          <a href="category/for-sell" class="category-box">
-                              <div class="category-box-icon margin-bottom-10">
-                                                                  <div class="category-icon"><img src="http://quickhomes.bylancer.com/storage/icons/sell.png"/></div>
-                                                              </div>
-                              <div class="category-box-counter">0</div>
-                              <div class="category-box-content">
-                                  <h3>For Sell <small>(0)</small></h3>
-                              </div>
-                              <div class="category-box-arrow">
-                                  <i class="fa fa-chevron-right"></i>
-                              </div>
-                          </a>
-                      
-                          <a href="category/for-rent" class="category-box">
-                              <div class="category-box-icon margin-bottom-10">
-                                                                  <div class="category-icon"><img src="http://quickhomes.byabeja.com/resources/icons//rent.png"/></div>
-                                                              </div>
-                              <div class="category-box-counter">0</div>
-                              <div class="category-box-content">
-                                  <h3>For Rent <small>(0)</small></h3>
-                              </div>
-                              <div class="category-box-arrow">
-                                  <i class="fa fa-chevron-right"></i>
-                              </div>
-                          </a>
-                      
-                  </div>
-                              </div>
-          </div>
-      </div>
-  </div>
-  
-  <div class="section gray padding-top-55 padding-bottom-65">
-      <div class="container">
-          <div class="row">
-              <div class="col-xl-12">
-                  <div class="section-headline centered margin-top-0 margin-bottom-45">
-                      <h3>Recent Blog</h3>
-                  </div>
-                  <div class="listings-container grid-layout grid-layout-3">
-                      
-                          <div class="job-listing blog-listing">
-                              <div class="job-listing-details">
-                                                                  <div class="job-listing-company-logo">
-                                      <a href="#">
-                                                                        <img src="{{ url_for('static', filename='resources/blog/default.png') }}" alt="Property Brokerage Insights"/>
-
-                                                                      
-                                                                      </a>
-                                  </div>
-                                                                  <div class="job-listing-description">
-                                      <div class="blog-cat"><a href="#">Lifestyle</a>, <a href="#">Fashion</a></div>
-                                      <h3 class="job-listing-title"><a href="#">Property Brokerage Insights</a>
-                                      </h3>
-  
-                                      <p class="job-listing-text margin-top-10">Unlock the Secrets of the UK Property Market: Explore our Latest Blog Posts and Stay Ahead of the Game with Property Brokerage.</p>
-                                  </div>
-                              </div>
-                              <div class="job-listing-footer">
-                                  <ul>
-                                      <li>
-                                         <img src="{{ url_for('static', filename='resources/testimonials/2.png') }}" class="author-avatar">
-                                          by
-                                          <a href="#">Admin</a>
-                                      </li>
-                                      <li><i class="la la-clock-o"></i> 3 weeks ago</li>
-                                  </ul>
+                      <a href="category/for-sell" class="category-box">
+                          <div class="category-box-icon margin-bottom-10">
+                              <div class="category-icon">
+                                  <img src="http://quickhomes.bylancer.com/storage/icons/sell.png" class="img-fluid" alt="For Sell">
                               </div>
                           </div>
-                      
-                  </div>
+                          <div class="category-box-counter">0</div>
+                          <div class="category-box-content">
+                              <h3>For Sell <small>(0)</small></h3>
+                          </div>
+                          <div class="category-box-arrow">
+                              <i class="fa fa-chevron-right"></i>
+                          </div>
+                      </a>
+                      <a href="category/for-rent" class="category-box">
+                          <div class="category-box-icon margin-bottom-10">
+                              <div class="category-icon">
+                                  <img src="http://quickhomes.byabeja.com/resources/icons//rent.png" class="img-fluid" alt="For Rent">
                               </div>
+                          </div>
+                          <div class="category-box-counter">0</div>
+                          <div class="category-box-content">
+                              <h3>For Rent <small>(0)</small></h3>
+                          </div>
+                          <div class="category-box-arrow">
+                              <i class="fa fa-chevron-right"></i>
+                          </div>
+                      </a>
+                  </div>
+              </div>
           </div>
       </div>
   </div>
-  <!-- footer -->
-  {% endblock %}
+  
+  <!-- Your existing code -->
+
+<div class="section padding-top-55 padding-bottom-55">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Section Headline -->
+                <div class="section-headline text-center mb-4">
+                    <h3>Your Recommendations</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullwidth-carousel-container mt-4">
+        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% for property in properties.iterrows() %}
+                <li data-target="#testimonial-carousel" data-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active"{% endif %}></li>
+                {% endfor %}
+            </ol>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+                {% for property in properties.iterrows() %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="card mb-4">
+                        <img width="476" height="317" class="card-img-top recommendation-image" alt="Property Image" data-src="">
+                      
+                        <div class="card-body">
+                
+                        <h5 class="card-title">Property ID {{ property[1]['item_id'] }}</h5>
+                        <div  class="card-text"><ul>
+                          <li><span class="text-danger">Visits: {{ property[1]['visit_count'] }}</span></li>  
+                          <li><span class="text-info">Number of Rooms: {{ property[1]['room_qty'] }}</span></li>  
+                          <li><span class="text-info">Monthly Rent: {{ property[1]['monthly_rent'] }}</span></li>  
+                          <li><span class="text-info">Unit Area: {{ property[1]['unit_area'] }}</span></li>  
+                          <li><span class="text-info">Building Floor Count: {{ property[1]['building_floor_count'] }}</span></li>                        
+                          <li><span class="text-info">Has An Elevator: {{ property[1]['has_elevator'] }}</span></li>  
+                          <li><span class="text-info">Has A storage Area: {{ property[1]['has_storage_area'] }}</span></li> </ul>
+                            
+                       
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Display the number of properties -->
+<div class="section padding-top-30 padding-bottom-30 text-center">
+    {% if properties is not none and properties|length > 0 %}
+    <p>Number of properties: {{ properties|length  }}</p>
+   
+   
+
+    
+    {% else %}
+    <p>No properties found.</p>
+    {% endif %}
+</div>
+
+<!-- Your existing code -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var propertyImages = document.querySelectorAll(".recommendation-image");
+      var img_urls = [ "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/142k/141185/133380611/141185_P359_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/14k/13739/128033891/13739_31868857_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/3k/2023/133058186/2023_NEA118468_IMG_06_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/142k/141185/133380611/141185_P359_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/105k/104704/129326042/104704_BRC_BRT_LFSYCL_300_456168009_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/251k/250799/133771745/250799_844_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/11k/10975/134692220/10975_32313595_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/11k/10975/134486639/10975_32301752_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/134503970/7637_BRC_NWL_LFSYCL_305_461226896_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7640/133722845/7640_BRC_NRT_LFSYCL_308_464231359_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/159k/158156/133869473/158156_202304171255sq_wiun_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402360/237332_ad5d36ad-0af0-4b3d-9ef1-47e4367e9888_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402273/237332_ab93984e-f917-4d7e-9db9-a61a85e06020_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/133830290/30167_HUL230324_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127369280/54891_31817306_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/224k/223499/134686760/223499_S228748_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127587074/30167_HUL220508_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/31k/30167/127329401/30167_HUL220435_IMG_15_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/238k/237332/134402207/237332_1f38e2c0-0914-4437-929b-0edecf0f046e_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/78k/77043/85465017/77043_295749_IMG_04_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/36k/35120/132531404/35120_26043848_IMG_00_0000_max_476x317.png" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/12k/11559/130199267/11559_0173_HRT017336094_IMG_03_0002_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/66k/65847/130152773/65847_11806971_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/133745687/74660_421882_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/75k/74660/134042744/74660_422685_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/194k/193637/128876426/193637_YL-05956_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129579785/7637_BRC_NWL_LFSYCL_305_461109818_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/253k/252650/132686078/252650_HAB230024_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/169k/168314/134447885/168314_1771_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7638/134211278/7638_BRC_HLD_LFSYCL_304_460226352_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/218k/217880/134444534/217880_1452_191250_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/8k/7637/129964046/7637_BRC_NWL_LFSYCL_305_461133775_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/55k/54891/127764389/54891_31845699_IMG_00_0000_max_476x317.jpeg" , "https://media.rightmove.co.uk:443/dir/crop/10:9-16:9/248k/247385/134637527/247385_208553_IMG_00_0000_max_476x317.jpeg" ];
+  
+      propertyImages.forEach(function(image) {
+        var randomIndex = Math.floor(Math.random() * img_urls.length);
+        var imageSrc = img_urls[randomIndex];
+        img_urls.splice(randomIndex, 1); // Remove the used image URL from the array
+        image.setAttribute("data-src", imageSrc);
+      });
+  
+      var lazyLoadImages = function() {
+        var imageObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var lazyImage = entry.target;
+              lazyImage.setAttribute('src', lazyImage.getAttribute('data-src'));
+              lazyImage.classList.remove('recommendation-image');
+              imageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+  
+        propertyImages.forEach(function(image) {
+          imageObserver.observe(image);
+        });
+      };
+  
+      if ('IntersectionObserver' in window) {
+        lazyLoadImages();
+      } else {
+        // Fallback for browsers without Intersection Observer support
+        propertyImages.forEach(function(image) {
+          image.setAttribute('src', image.getAttribute('data-src'));
+          image.classList.remove('recommendation-image');
+        });
+      }
+  
+      console.log('Lazy load script executed successfully.');
+    });
+  </script>
+
+{% endblock %}
