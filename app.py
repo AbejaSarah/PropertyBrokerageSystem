@@ -95,12 +95,23 @@ class LoginForm(FlaskForm):
 properties = pd.read_csv('data/property.csv')
 user_activity = pd.read_csv('data/user_activity.csv')
 
-# Calculate property popularity based on the event type
-property_frequency = user_activity['event_type'].value_counts().to_dict()
+# Calculate property popularity
+property_frequency = user_activity['item_id'].value_counts().to_dict()
 
 @app.route('/')
+@app.route('/')
 def index():
-    return render_template('home.html')
+    # Find the most visited properties
+    property_visits = user_activity['item_id'].value_counts().reset_index()
+    property_visits.columns = ['item_id', 'visit_count']
+    most_visited_properties = property_visits.merge(properties, on='item_id')
+
+    if most_visited_properties.empty:
+        no_properties_message = "No properties found."
+        return render_template('home.html', no_properties_message=no_properties_message)
+    
+    return render_template('home.html', properties=most_visited_properties)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
