@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block content %}      
+{% block content %} 
+
+
   <div class="intro-banner" data-background-image="{{ url_for('static', filename='resources/banner/bg.jpg') }}">
         <div class="container">
             <div class="row">
@@ -92,12 +94,12 @@
             <div class="col-xl-12">
                 <!-- Section Headline -->
                 <div class="section-headline text-center mb-4">
-                    <h3>Your Recommendations</h3>
+                    <h3>Most Viewed Properties</h3>
                 </div>
             </div>
         </div>
     </div>
-    <div class="fullwidth-carousel-container mt-4">
+    <div class="fullwidth-carousel-container mt-4 mx-auto" style="width: 476px; ">
         <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -115,11 +117,11 @@
                       
                         <div class="card-body">
                 
-                        <h5 class="card-title">Property ID {{ property[1]['item_id'] }}</h5>
+                        <h5 class="card-title text-primary">Property ID: {{ property[1]['item_id'] }}</h5>
                         <div  class="card-text"><ul>
                           <li><span class="text-danger">Visits: {{ property[1]['visit_count'] }}</span></li>  
                           <li><span class="text-info">Number of Rooms: {{ property[1]['room_qty'] }}</span></li>  
-                          <li><span class="text-info">Monthly Rent: {{ property[1]['monthly_rent'] }}</span></li>  
+                          <li><span class="text-info">Monthly Rent: &pound; {{ property[1]['monthly_rent'] }}</span></li>  
                           <li><span class="text-info">Unit Area: {{ property[1]['unit_area'] }}</span></li>  
                           <li><span class="text-info">Building Floor Count: {{ property[1]['building_floor_count'] }}</span></li>                        
                           <li><span class="text-info">Has An Elevator: {{ property[1]['has_elevator'] }}</span></li>  
@@ -147,9 +149,9 @@
 </div>
 
 <!-- Display the number of properties -->
-<div class="section padding-top-30 padding-bottom-30 text-center">
+<div class="section padding-top-5 padding-bottom-10 text-center">
     {% if properties is not none and properties|length > 0 %}
-    <p>Number of properties: {{ properties|length  }}</p>
+    <p class="text-info">Number of Frequently visited Properties: {{ properties|length  }}</p>
    
    
 
@@ -203,5 +205,5 @@
       console.log('Lazy load script executed successfully.');
     });
   </script>
-
+ 
 {% endblock %}
